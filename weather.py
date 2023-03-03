@@ -4,7 +4,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 from typing import Any
 from datetime import date
-from datetime import datetime
 
 
 # TODO: Add axis labels and units 
@@ -28,9 +27,6 @@ params = {
         'timezone': 'auto',
         'daily': 'temperature_2m_mean',
         }
-
-print(params['start_date'])
-print(params['end_date'])
 
 url = 'https://archive-api.open-meteo.com/v1/archive'
 
