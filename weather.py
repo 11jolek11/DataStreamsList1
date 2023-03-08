@@ -22,7 +22,7 @@ def delete_item(list_to_check: list, targets: list) -> list:
 params = {
         'latitude': '51.10',
         'longitude': '17.03',
-        'start_date': f'{date.today().year}-{date.today().month:02d}-{date.today().day:02d}',
+        'start_date': f'{date.today().year}-{date.today().month-1:02d}-{date.today().day:02d}',
         'end_date': str(date.today()),
         'timezone': 'auto',
         'daily': 'temperature_2m_mean',
@@ -47,6 +47,7 @@ temp_data_empty = find_item(temp_data, None)
 if temp_data_empty:
     print("Caution: Some data cells are empty!")
     print("Removing empty cells by force")
+    print(temp_data_empty)
     temp_data = delete_item(temp_data, temp_data_empty)
     data_labels = delete_item(data_labels, temp_data_empty)
 
